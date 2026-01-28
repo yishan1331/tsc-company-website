@@ -9,6 +9,7 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   glow?: boolean;
+  type?: "button" | "submit" | "reset";
 }
 
 const variants = {
@@ -34,6 +35,7 @@ export default function Button({
   onClick,
   className = "",
   glow = false,
+  type = "button",
 }: ButtonProps) {
   const baseClasses = `inline-flex items-center justify-center font-semibold rounded-lg transition-all ${variants[variant]} ${sizes[size]} ${glow ? "animate-pulse-glow" : ""} ${className}`;
 
@@ -46,7 +48,7 @@ export default function Button({
   }
 
   return (
-    <button onClick={onClick} className={baseClasses}>
+    <button type={type} onClick={onClick} className={baseClasses}>
       {children}
     </button>
   );
