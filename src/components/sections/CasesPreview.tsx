@@ -6,31 +6,31 @@ import Link from "next/link";
 
 const cases = [
   {
-    id: "fastener",
-    industry: "扣件成型",
-    title: "扣件成型機台 IoT 化",
+    id: "sbir-textile",
+    industry: "紡織染整",
+    title: "SBIR 染整產業智慧調控雲平台",
     description:
-      "連結舊式、新式機台，將各式訊號轉接經 aIoT-Box 處理，進行大數據處理與可視化展示",
-    results: ["產能提升 25%", "良率改善 15%", "故障預警準確率 95%"],
-    image: "/images/cases/fastener.jpg",
+      "獲臺南市政府審查推薦進入「中央地方攜手方案」，為數位轉型領域唯一獲選專案",
+    results: ["SBIR 獲選", "製程即時監控", "智慧調控"],
+    image: "/images/spinning.png",
   },
   {
-    id: "metal-mold",
-    industry: "金屬模具",
-    title: "金屬模具製造智慧服務平台",
+    id: "sports-equipment",
+    industry: "運動器材",
+    title: "運動器材智慧產線管理系統",
     description:
-      "遠端監控公司產能狀況、營運狀況、NC 異常回報，提供多平台可視化介面",
-    results: ["遠端監控 24/7", "異常回報即時", "產能可視化"],
-    image: "/images/cases/metal-mold.jpg",
+      "建立智慧管理及製造系統平台，整合生產看板、工單管理與品質管控",
+    results: ["生產看板即時", "工單數位化", "品質系統化"],
+    image: "/images/mes.png",
   },
   {
-    id: "power-converter",
-    industry: "電源轉換器",
-    title: "電源轉換器科技公司管理監控平台",
+    id: "carbon-data",
+    industry: "碳管理",
+    title: "碳數據雲平台系統",
     description:
-      "整合場域監控、電子看板、工時紀錄、文件管理、工單管理、資源管理等功能",
-    results: ["管理效率提升 40%", "工時記錄數位化", "庫存管理優化"],
-    image: "/images/cases/power-converter.jpg",
+      "建置碳數據雲端平台，協助企業進行碳排放數據收集、計算與 ESG 報告",
+    results: ["碳排即時監測", "碳盤查自動化", "ESG 標準化"],
+    image: "/images/carbon.png",
   },
 ];
 
@@ -49,16 +49,16 @@ export default function CasesPreview() {
           {cases.map((caseItem) => (
             <Link
               key={caseItem.id}
-              href={`/cases/${caseItem.id}`}
+              href="/cases"
               className="group relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-[#00d4ff]/50 transition-all duration-300"
             >
-              {/* Image placeholder */}
-              <div className="aspect-video bg-gradient-to-br from-[#1e3a5f] to-[#0a0f1a] flex items-center justify-center">
-                <span className="text-6xl opacity-50">
-                  {caseItem.industry === "扣件成型" && "🔩"}
-                  {caseItem.industry === "金屬模具" && "🏭"}
-                  {caseItem.industry === "電源轉換器" && "⚡"}
-                </span>
+              {/* Image */}
+              <div className="aspect-video bg-gradient-to-br from-[#1e3a5f] to-[#0a0f1a] overflow-hidden">
+                <img
+                  src={caseItem.image}
+                  alt={caseItem.title}
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                />
               </div>
 
               {/* Content */}

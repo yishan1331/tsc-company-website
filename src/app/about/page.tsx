@@ -7,7 +7,28 @@ export const metadata: Metadata = {
 };
 
 const milestones = [
-  { year: "2024", title: "台訊鍇成立", description: "專注於工業物聯網與智慧製造解決方案" },
+  {
+    year: "2025",
+    title: "SBIR 中央地方攜手方案獲選",
+    description:
+      "以「染整產業整理工序智慧調控數位雲平台系統」專案獲臺南市政府審查推薦，為數位轉型領域唯一獲選專案",
+    image: "/images/SBIR.png",
+    projects: [
+      "SBIR染整產業整理工序智慧調控數位雲平台系統",
+      "養殖管理系統",
+      "運動器材智慧產線管理系統",
+    ],
+  },
+  {
+    year: "2024",
+    title: "台訊鍇成立",
+    description: "專注於工業物聯網與智慧製造解決方案，年度完成 4 項專案",
+    projects: [
+      "碳數據雲平台系統",
+      "CIO資安",
+      "詢報價系統",
+    ],
+  },
 ];
 
 const values = [
@@ -152,6 +173,25 @@ export default function AboutPage() {
                     <div className="pt-3">
                       <h3 className="text-xl font-semibold text-white mb-2">{milestone.title}</h3>
                       <p className="text-[#94a3b8]">{milestone.description}</p>
+                      {milestone.image && (
+                        <div className="mt-4 rounded-xl overflow-hidden border border-white/10">
+                          <img
+                            src={milestone.image}
+                            alt={milestone.title}
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      )}
+                      {milestone.projects && milestone.projects.length > 0 && (
+                        <ul className="mt-3 space-y-1.5">
+                          {milestone.projects.map((project) => (
+                            <li key={project} className="flex items-center gap-2 text-sm text-[#94a3b8]">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#00d4ff] shrink-0" />
+                              {project}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 ))}
