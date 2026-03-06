@@ -220,7 +220,7 @@ export default function AboutPage() {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00d4ff]/50 transition-all group"
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00d4ff]/50 transition-all group cursor-pointer"
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#00d4ff]/20 to-[#7c3aed]/20 flex items-center justify-center text-[#00d4ff] mb-4 group-hover:scale-110 transition-transform">
                   {value.icon}

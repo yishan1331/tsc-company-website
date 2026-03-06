@@ -43,12 +43,12 @@ export default function Footer() {
 						<h4 className="text-white font-semibold mb-4">
 							產品方案
 						</h4>
-						<ul className="space-y-3">
+						<ul className="space-y-1">
 							{footerLinks.solutions.map((link) => (
 								<li key={link.href}>
 									<Link
 										href={link.href}
-										className="text-[#94a3b8] hover:text-[#00d4ff] transition-colors text-sm"
+										className="text-[#94a3b8] hover:text-[#00d4ff] transition-colors text-sm py-2 inline-flex items-center min-h-[44px]"
 									>
 										{link.label}
 									</Link>

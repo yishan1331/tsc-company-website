@@ -25,6 +25,18 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -64,7 +76,7 @@ export default function Header() {
             {/* Language Switcher */}
             <button
               onClick={() => setLocale(locale === "zh" ? "en" : "zh")}
-              className="text-[#94a3b8] hover:text-white text-sm font-medium px-3 py-1 border border-white/20 rounded-lg hover:border-white/40 transition-all"
+              className="text-[#94a3b8] hover:text-white text-sm font-medium px-3 py-2 min-h-[44px] min-w-[44px] border border-white/20 rounded-lg hover:border-white/40 transition-all cursor-pointer"
             >
               {locale === "zh" ? "EN" : "中"}
             </button>
@@ -80,7 +92,8 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-white p-2"
+              className="md:hidden text-white p-2 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
+              aria-label={isMobileMenuOpen ? "關閉選單" : "開啟選單"}
             >
               <svg
                 className="w-6 h-6"
@@ -109,15 +122,19 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/10">
-            <nav className="flex flex-col gap-4">
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="py-4 border-t border-white/10">
+            <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-[#94a3b8] hover:text-white transition-colors text-base font-medium py-2"
+                  className="text-[#94a3b8] hover:text-white transition-colors text-base font-medium py-3 min-h-[44px] flex items-center"
                 >
                   {locale === "zh" ? link.label : link.labelEn}
                 </Link>
@@ -125,13 +142,13 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex justify-center px-5 py-3 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] text-white text-sm font-semibold rounded-lg mt-2"
+                className="inline-flex justify-center px-5 py-3 min-h-[44px] bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] text-white text-sm font-semibold rounded-lg mt-2"
               >
                 免費諮詢
               </Link>
             </nav>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

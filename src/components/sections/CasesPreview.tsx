@@ -50,7 +50,7 @@ export default function CasesPreview() {
             <Link
               key={caseItem.id}
               href="/cases"
-              className="group relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-[#00d4ff]/50 transition-all duration-300"
+              className="group relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-[#00d4ff]/50 transition-all duration-300 cursor-pointer"
             >
               {/* Image */}
               <div className="aspect-video bg-gradient-to-br from-[#1e3a5f] to-[#0a0f1a] overflow-hidden">

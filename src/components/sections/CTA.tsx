@@ -37,7 +37,7 @@ export default function CTA() {
           </div>
 
           {/* Trust indicators */}
-          <div className="flex items-center justify-center gap-8 mt-12 pt-12 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-12 pt-12 border-t border-white/10">
             <div className="flex items-center gap-2 text-[#94a3b8] text-sm">
               <svg
                 className="w-5 h-5 text-[#10b981]"

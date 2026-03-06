@@ -37,7 +37,7 @@ export default function Button({
   glow = false,
   type = "button",
 }: ButtonProps) {
-  const baseClasses = `inline-flex items-center justify-center font-semibold rounded-lg transition-all ${variants[variant]} ${sizes[size]} ${glow ? "animate-pulse-glow" : ""} ${className}`;
+  const baseClasses = `inline-flex items-center justify-center font-semibold rounded-lg transition-all cursor-pointer min-h-[44px] ${variants[variant]} ${sizes[size]} ${glow ? "animate-pulse-glow" : ""} ${className}`;
 
   if (href) {
     return (

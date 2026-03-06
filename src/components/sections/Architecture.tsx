@@ -59,69 +59,90 @@ export default function Architecture() {
             </Button>
           </div>
 
-          {/* Right - 3D Isometric Visual */}
-          <div className="relative flex items-center justify-center min-h-[400px]">
-            {/* 3D Isometric Stack */}
-            <div
-              className="relative"
-              style={{
-                transform: "rotateX(60deg) rotateZ(-45deg)",
-                transformStyle: "preserve-3d",
-              }}
-            >
-              {layers.map((layer, index) => (
+          {/* Right - Architecture Visual */}
+          <div className="relative">
+            {/* Mobile: Stacked cards */}
+            <div className="lg:hidden space-y-3">
+              {[...layers].reverse().map((layer) => (
                 <div
                   key={layer.level}
-                  className="relative group"
-                  style={{
-                    transform: `translateZ(${index * 25}px)`,
-                    transformStyle: "preserve-3d",
-                  }}
+                  className={`flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r ${layer.gradient} bg-opacity-10 border border-white/10`}
+                  style={{ background: `linear-gradient(to right, ${layer.color}15, ${layer.color}05)`, borderColor: `${layer.color}30` }}
                 >
-                  {/* Top face */}
                   <div
-                    className={`w-48 h-48 bg-gradient-to-br ${layer.gradient} rounded-lg shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(255,255,255,0.2)]`}
-                    style={{
-                      transform: "translateZ(20px)",
-                    }}
+                    className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
+                    style={{ background: `linear-gradient(135deg, ${layer.color}, ${layer.color}99)` }}
                   >
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                      <span className="text-2xl font-bold">{layer.level}</span>
-                      <span className="text-sm mt-1 opacity-90">{layer.title}</span>
-                    </div>
+                    <span className="text-white font-bold text-sm">{layer.level}</span>
                   </div>
-
-                  {/* Right face */}
-                  <div
-                    className="absolute top-0 w-48 h-5 origin-bottom"
-                    style={{
-                      transform: "rotateX(-90deg) translateZ(192px)",
-                      background: `linear-gradient(to bottom, ${layer.color}cc, ${layer.color}66)`,
-                    }}
-                  />
-
-                  {/* Front face */}
-                  <div
-                    className="absolute top-0 left-0 w-5 h-48 origin-left"
-                    style={{
-                      transform: "rotateY(90deg)",
-                      background: `linear-gradient(to right, ${layer.color}99, ${layer.color}44)`,
-                    }}
-                  />
+                  <div>
+                    <span className="text-white font-semibold">{layer.title}</span>
+                  </div>
                 </div>
               ))}
+              <div className="flex items-center justify-center gap-2 pt-2">
+                <svg className="w-5 h-5 text-[#00d4ff] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
+                <span className="text-xs text-[#94a3b8]">DATA FLOW</span>
+              </div>
             </div>
 
-            {/* Glow effects */}
-            <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-[#00d4ff] rounded-full blur-[80px] opacity-30" />
-            <div className="absolute bottom-1/4 left-1/4 w-32 h-32 bg-[#7c3aed] rounded-full blur-[80px] opacity-30" />
+            {/* Desktop: 3D Isometric Stack */}
+            <div className="hidden lg:flex items-center justify-center min-h-[400px]">
+              <div
+                className="relative"
+                style={{
+                  transform: "rotateX(60deg) rotateZ(-45deg)",
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                {layers.map((layer, index) => (
+                  <div
+                    key={layer.level}
+                    className="relative group"
+                    style={{
+                      transform: `translateZ(${index * 25}px)`,
+                      transformStyle: "preserve-3d",
+                    }}
+                  >
+                    <div
+                      className={`w-48 h-48 bg-gradient-to-br ${layer.gradient} rounded-lg shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(255,255,255,0.2)]`}
+                      style={{ transform: "translateZ(20px)" }}
+                    >
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                        <span className="text-2xl font-bold">{layer.level}</span>
+                        <span className="text-sm mt-1 opacity-90">{layer.title}</span>
+                      </div>
+                    </div>
+                    <div
+                      className="absolute top-0 w-48 h-5 origin-bottom"
+                      style={{
+                        transform: "rotateX(-90deg) translateZ(192px)",
+                        background: `linear-gradient(to bottom, ${layer.color}cc, ${layer.color}66)`,
+                      }}
+                    />
+                    <div
+                      className="absolute top-0 left-0 w-5 h-48 origin-left"
+                      style={{
+                        transform: "rotateY(90deg)",
+                        background: `linear-gradient(to right, ${layer.color}99, ${layer.color}44)`,
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
 
-            {/* Floating labels - arrow pointing from L1 to L4 (bottom-right to top-left) */}
-            <div className="absolute bottom-8 right-8 flex items-center gap-2">
-              <div className="text-xs text-[#94a3b8]">DATA FLOW</div>
-              <svg className="w-6 h-6 text-[#00d4ff] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17L7 7M7 7h10M7 7v10" />
-              </svg>
+              {/* Glow effects */}
+              <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-[#00d4ff] rounded-full blur-[80px] opacity-30" />
+              <div className="absolute bottom-1/4 left-1/4 w-32 h-32 bg-[#7c3aed] rounded-full blur-[80px] opacity-30" />
+
+              <div className="absolute bottom-8 right-8 flex items-center gap-2">
+                <div className="text-xs text-[#94a3b8]">DATA FLOW</div>
+                <svg className="w-6 h-6 text-[#00d4ff] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17L7 7M7 7h10M7 7v10" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>

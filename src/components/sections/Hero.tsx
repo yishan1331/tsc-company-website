@@ -35,7 +35,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="text-xl text-[#94a3b8] mb-10 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-xl text-[#94a3b8] mb-10 max-w-2xl leading-relaxed">
             台訊鍇提供客戶服務導向型雲端平台系統，為勞力密集的產業提升智能化能量與國際競爭力。
             從感測器到雲端，一站式 AIoT 解決方案。
           </p>
@@ -51,18 +51,18 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-xl">
+          <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-xl">
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#00d4ff] mb-2">30+</div>
-              <div className="text-[#94a3b8] text-sm">年產業經驗</div>
+              <div className="text-2xl sm:text-4xl font-bold text-[#00d4ff] mb-1 sm:mb-2">30+</div>
+              <div className="text-[#94a3b8] text-xs sm:text-sm">年產業經驗</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#00d4ff] mb-2">100+</div>
-              <div className="text-[#94a3b8] text-sm">成功導入案例</div>
+              <div className="text-2xl sm:text-4xl font-bold text-[#00d4ff] mb-1 sm:mb-2">100+</div>
+              <div className="text-[#94a3b8] text-xs sm:text-sm">成功導入案例</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#00d4ff] mb-2">99.9%</div>
-              <div className="text-[#94a3b8] text-sm">系統穩定度</div>
+              <div className="text-2xl sm:text-4xl font-bold text-[#00d4ff] mb-1 sm:mb-2">99.9%</div>
+              <div className="text-[#94a3b8] text-xs sm:text-sm">系統穩定度</div>
             </div>
           </div>
         </div>

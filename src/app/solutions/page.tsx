@@ -176,7 +176,7 @@ export default function SolutionsPage() {
                 <div
                   className={`relative ${index % 2 === 1 ? "lg:order-1" : ""}`}
                 >
-                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 flex items-center justify-center">
+                  <div className="aspect-video lg:aspect-square rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 flex items-center justify-center">
                     <div
                       className={`w-32 h-32 rounded-2xl bg-gradient-to-br ${product.gradient} flex items-center justify-center`}
                     >

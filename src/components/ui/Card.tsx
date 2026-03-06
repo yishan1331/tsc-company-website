@@ -19,7 +19,7 @@ export default function Card({
         relative p-6 rounded-2xl
         bg-gradient-to-b from-white/5 to-transparent
         border border-white/10
-        ${hover ? "hover:border-[#00d4ff]/50 transition-all duration-300" : ""}
+        ${hover ? "hover:border-[#00d4ff]/50 transition-all duration-300 cursor-pointer" : ""}
         ${glow ? "hover:shadow-[0_0_30px_rgba(0,212,255,0.2)]" : ""}
         ${className}
       `}

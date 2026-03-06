@@ -39,12 +39,12 @@ export default function CasesList({
       {/* Industry Filter */}
       <section className="bg-[#050810] py-8 border-b border-white/10 sticky top-20 z-40">
         <div className="container mx-auto px-6">
-          <div className="flex items-center gap-4 overflow-x-auto pb-2">
+          <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
             {industries.map((industry) => (
               <button
                 key={industry}
                 onClick={() => setActiveFilter(industry)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                className={`px-4 py-2.5 min-h-[44px] rounded-lg text-sm font-medium whitespace-nowrap transition-all cursor-pointer ${
                   industry === activeFilter
                     ? "bg-[#00d4ff] text-white"
                     : "bg-white/5 text-[#94a3b8] hover:bg-white/10"
