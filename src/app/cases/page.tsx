@@ -62,7 +62,7 @@ const cases = [
 		title: "碳數據雲平台系統",
 		description:
 			"建置碳數據雲端平台，協助企業進行碳排放數據收集、計算與報告，落實 ESG 永續發展目標與碳盤查管理。",
-		images: ["/images/carbon.jpg"],
+		images: ["/images/carbon.png"],
 		results: [
 			{ metric: "碳排監測", value: "即時", icon: "📡" },
 			{ metric: "碳盤查", value: "自動化", icon: "🔄" },

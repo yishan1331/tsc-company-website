@@ -30,7 +30,7 @@ const cases = [
 		description:
 			"建置碳數據雲端平台，協助企業進行碳排放數據收集、計算與 ESG 報告",
 		results: ["碳排即時監測", "碳盤查自動化", "ESG 標準化"],
-		image: "/images/carbon.jpg",
+		image: "/images/carbon.png",
 	},
 ];
 
