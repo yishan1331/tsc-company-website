@@ -12,7 +12,7 @@ const milestones = [
     title: "SBIR 中央地方攜手方案獲選",
     description:
       "以「染整產業整理工序智慧調控數位雲平台系統」專案獲臺南市政府審查推薦，為數位轉型領域唯一獲選專案",
-    image: "/images/SBIR.png",
+    image: "/images/SBIR.jpg",
     projects: [
       "SBIR染整產業整理工序智慧調控數位雲平台系統",
       "養殖管理系統",
