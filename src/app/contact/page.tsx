@@ -304,7 +304,7 @@ export default function ContactPage() {
 											電子郵件
 										</h3>
 										<p className="text-[#94a3b8]">
-											ethantsaijob@gmail.com
+											support@tscloudai.com
 										</p>
 									</div>
 								</div>
