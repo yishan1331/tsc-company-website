@@ -25,21 +25,6 @@ const cases = [
 		features: ["製程參數監控", "智慧調控", "數據分析", "雲平台管理"],
 	},
 	{
-		id: "aquaculture",
-		year: "2025",
-		industry: "智慧養殖",
-		title: "養殖管理系統",
-		description:
-			"建立養殖場域數位管理平台，整合環境監測、養殖數據記錄與分析，協助養殖業者提升管理效率與養殖品質。",
-		results: [
-			{ metric: "環境監測", value: "即時", icon: "🌡️" },
-			{ metric: "養殖管理", value: "數位化", icon: "🐟" },
-			{ metric: "數據記錄", value: "自動化", icon: "📊" },
-			{ metric: "管理效率", value: "提升", icon: "⚡" },
-		],
-		features: ["環境監測", "數據記錄", "養殖管理", "數據分析"],
-	},
-	{
 		id: "sports-equipment",
 		year: "2025",
 		industry: "運動器材",
